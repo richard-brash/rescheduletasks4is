@@ -1,0 +1,26 @@
+{
+  "name": "reschedule-tasks4IS",
+  "main": "index.html",
+  "description": "Reschedule Infusionsoft Tasks to another day",
+  "window": {
+    "icon": "img/icon.png",
+    "title": "Reschedule Infusionsoft Tasks",
+    "toolbar": false,
+    "width": 900,
+    "height": 800
+  },
+   "dependencies": {
+        "isSDK": "git+https://rbmglobal@bitbucket.org/rbmglobal/issdk.git",
+        "moment": "~2.4.0"
+    },
+    "webkit": {
+        "plugin": true
+    },
+    "scripts": {
+        "start": "nodewebkit"
+    },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-node-webkit-builder": "~0.1.14"
+  }
+}

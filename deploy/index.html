@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reschedule Infusionsoft Tasks v1.1</title>
+
+
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/foundation-datepicker.css">
+
+
+    <script src="js/modernizr.js"></script>
+</head>
+<body>
+
+    <div class="row">
+        <div class="large-12 small-12 columns panel">
+            <h3 data-bind="text: appName"></h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="large-4 small-4 columns">
+            <label>Date to find</label>
+            <input type="text" data-bind="value: dateFilter" id="dp1" />
+        </div>
+        <div class="large-4 small-4 columns">
+            <label>&nbsp;</label>
+            <button class="small" data-bind="click: getTasksFromServer">Get Tasks from Infusionsoft!</button>
+        </div>
+        <div class="large-4 small-4 columns">
+            &nbsp;
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="large-4 small-4 columns">
+            <label>Change Date to</label>
+            <input type="text" data-bind="value: changeDate" id="dp2" />
+        </div>
+        <div class="large-4 small-4 columns">
+            <label>&nbsp;</label>
+            <button class="small" data-bind="click: changeDates">Change date for selected tasks in Infusionsoft!</button>
+        </div>
+        <div class="large-4 small-4 columns">
+            &nbsp;
+        </div>
+    </div>
+    <br/>
+
+    <div class="row taskHeader">
+        <div class="small-1 large-1 columns">
+            <input type="checkbox" data-bind="checked: changeAll, click: checkAll"/>
+        </div>
+        <div class="small-4 large-4 columns"><label>Who</label></div>
+        <div class="small-5 large-5 columns"><label>What</label></div>
+        <div class="small-2 large-2 columns"><label>When</label></div>
+    </div>
+    <div data-bind="foreach: tasks">
+        <div class="row task" data-bind="css: { even: $index()%2 }">
+            <div class="small-1 large-1 columns">
+                <input type="checkbox" data-bind="checked: changeMe"/>
+            </div>
+            <div class="small-4 large-4 columns">
+                <span data-bind="text: fullName"></span><br/>
+                (<span data-bind="text: Company"></span>)
+            </div>
+            <div class="small-5 large-5 columns">
+                <span data-bind="text: fullDescription"></span>
+            </div>
+            <div class="small-2 large-2 columns">
+                <span data-bind="text: fixDate()"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/foundation-datepicker.js"></script>
+    <script src="js/knockout-3.0.0.js"></script>
+
+    <script src="lib/main.js"></script>
+
+</body>
+</html>

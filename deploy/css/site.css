@@ -1,0 +1,23 @@
+label {
+    font-weight: 700;
+}
+
+
+div.taskHeader {
+    margin-bottom: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #f1f1f1;
+}
+
+div.task {
+    margin-bottom: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #f9f9f9;
+}
+
+div.even {
+    background-color: #f1f1f1;
+}
+
