@@ -11,7 +11,7 @@
   },
    "dependencies": {
         "isSDK": "git+https://rbmglobal@bitbucket.org/rbmglobal/issdk.git",
-        "moment": "~2.4.0"
+        "moment": "~2.24.0"
     },
     "webkit": {
         "plugin": true
